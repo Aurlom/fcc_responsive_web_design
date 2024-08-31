@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet">
+    <title>Survey</title>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Coding Survey</h1>
+      <p id="description">A survey regarding your code learning experience</p>
+      <form id="survey-form" method="post">
+        <fieldset class="form-area">
+          <label for="name" id="name-label" class="field-label">Name
+            <input type="text" id="name" class="input-field" placeholder="Enter your name" required>
+          </label>
+          <label for="email" id="email-label" class="field-label">Email
+            <input type="email" id="email" class="input-field" placeholder="Enter your Email" required>
+          </label>
+          <label for="age" id="number-label" class="field-label">Age
+            <input type="number" id="number" class="input-field" min="13" max="120" placeholder="Age">
+          </label>
+          <label for="dropdown" id="role-label" class="field-label">Which of the following describes your current role?
+            <select id="dropdown" class="input-field">
+              <option value="">(choose one)</option>
+              <option value="1">Student</option>
+              <option value="2">Full-time learner</option>
+              <option value="3">Full-time job</option>
+              <option value="4">Prefer not to say</option>
+              <option value="5">Other</option>
+            </select>
+          </label>
+          <label for="recommend" id="recommend-label" class="field-label">Would you recommend learning to code to a friend?
+            <div class="input-field">
+              <label for="yes-radio" id="choice-label" class="check-item">
+                <input id="yes-radio" type="radio" name="recommend" value="yes" checked>
+                Yes
+              </label>
+              <label for="no-radio" id="recommend-label" class="check-item">
+                <input id="no-radio" type="radio" name="recommend" value="no">
+                No
+              </label>
+              <label for="maybe-radio" id="choice-label" class="check-item">
+                <input id="maybe-radio" type="radio" name="recommend" value="maybe">
+                Maybe
+              </label>
+            </div>
+          </label>
+          <label for="checkbox" id="checkbox-label" class="field-label">What are your areas of interest?
+            <div class="input-field">
+              <label for="front-end-check" id="front-end-label" class="check-item">
+                <input id="front-end-check" type="checkbox" value="front-end">
+                Front-end
+              </label>
+              <label for="back-end-check" id="back-end-label" class="check-item">
+                <input id="back-end-check" type="checkbox" value="back-end">
+                Back-end
+              </label>
+              <label for="full-stack-check" id="full-stack-label" class="check-item">
+                <input id="full-stack-check" type="checkbox" value="full-stack">
+                Full-stack
+              </label>
+              <label for="design-check" id="design-label" class="check-item">
+                <input id="design-check" type="checkbox" value="design">
+                Design
+              </label>
+              <label for="data-check" id="data-label" class="check-item">
+                <input id="data-check" type="checkbox" value="data">
+                Data-science
+              </label>
+              <label for="automation-check" id="automation-label" class="check-item">
+                <input id="automation-check" type="checkbox" value="automation">
+                Automation
+              </label>
+              <label for="science-check" id="science-label" class="check-item">
+                <input id="science-check" type="checkbox" value="science">
+                Computational sciences
+              </label>
+            </div>
+          </label>
+          <label for="comments" id="comments-label" class="field-label">Any additional thoughts?
+            <textarea id="comments" class="input-field" name="comments" placeholder="Enter your comments here...">
+            </textarea>
+          </input>
+          <input type="submit" id="submit" class="input-field">
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

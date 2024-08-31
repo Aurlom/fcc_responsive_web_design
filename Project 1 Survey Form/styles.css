@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    color: rgb(200, 200, 200);
+    background-color: rgb(10, 60, 125);
+    height: 100vh;
+    margin: 0;
+  }
+  
+  h1, p {
+    text-align: center;
+    margin: 0;  
+  }
+  
+  h1 {
+    padding: 40px 0 0 0;
+  }
+  
+  .form-area{
+    background-color: rgba(10, 10, 65, 10);
+    width: 60vw;
+    max-width: 700px;
+    min-width: 400px;
+    margin: 30px auto;
+    border: none;
+    font-family: "Times New Roman";
+    padding: 40px 0;
+  }
+  
+  .input-field {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 8px 0;
+  }
+  
+  .check-item {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .field-label {
+    margin-left: 10%;
+  }
+  
+  input[type="submit"] {
+    background-color: rgb(40, 255, 150);
+  }
