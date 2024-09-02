@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Documentation</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>C Documentation</header>
+      <ul>
+        <li>
+          <a href="#introduction" class="nav-link">Introduction</a>
+        </li>
+        <li>
+          <a href="#why_learn_c" class="nav-link">Why Learn C</a>
+        </li>
+        <li>
+          <a href="#c_and_c++" class="nav-link">C and C++</a>
+        </li>
+        <li>
+          <a href="#hello_world" class="nav-link">Hello world</a>
+        </li>
+        <li>
+          <a href="#variables" class="nav-link">Variables</a>
+        </li>
+        <li>
+          <a href="#conditionals" class="nav-link">Conditionals</a>
+        </li>
+        <li>
+          <a href="#reference" class="nav-link">Reference</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section id="introduction" class="main-section">
+        <header>Introduction</header>
+        <p>
+          C is a procedural language develloped by Dennis Ritchie in 1972 at AT&T Bell Laboratories. It was initially developed as a system programming language to write the UNIX operating system. It is widely used today to program operating systems and compilers.
+        </p>
+        <p>
+          C is useful for these tasks due to it's "low-level" nature while remaining portable and not being as cryptic as assembly language.
+        </p>
+        <p>
+          Advantages include:
+          <ul>
+            <li>General purpose and widely compatible</li>
+            <li>
+              Low-level and intentional memory management
+              <ul>
+                <li>This can also be a drawback as it's easy to leave vulnerabilities if not careful</li>
+              </ul>
+            </li>
+            <li>Fast</li>
+            <li>Code organized into bracketed blocks</li>
+          </ul>
+        </p>
+      </section>
+      <section id="why_learn_c" class="main-section">
+        <header>Why learn C</header>
+        <p>
+          Learning C, especially as a first language, can teach a programmer good habits and help engender understanding of the underlying function of software. Having to specifically allocate memory, understand pointers, and have to construct strings as an array of characters teaches how data is stored and accessed, and how memory usage is directly related to the design of a program.
+        </p>
+        <p>
+          In addition, many modern languages use C syntax and concepts, including Java, PHP, JavaScript, C++, C#, and many others. C++ is almost a superset of C, and most C programs could compile in a C++ compiler.
+        </p>
+      </section>
+      <section id="c_and_c++" class="main-section">
+        <header>C and C++</header>
+        <p>
+          C++ was created to bring concepts of "object-oriented programming" into C. They share much of the same syntax, but C++ support of classes and features such as exception handling makes it more convenient for programming applications. That convenience comes at the price of speed, and thus, C remains popular for lower level programming.
+        </p>
+      </section>
+      <section id="hello_world" class="main-section">
+        <header>Hello world</header>
+        <p>
+          To get started with C, open a text editor and write the traditional "Hello, world!" code:
+        <code>
+#include &lt;stdio.h&gt;
+            
+int main(void)
+{
+    printf("Hello, world!");
+    return 0;
+}
+        </code>
+        </p>
+        <p>
+          <ul>
+            <li>
+              <code class="no-pre">#include &lt;stdio.h&gt;</code>
+              <ul>
+                <li>
+                  A "preprocessor directive" telling the C compiler to include the functions from the stdio header file (which includes printf())
+                </li>
+              </ul>
+            </li>
+            <li>
+              <code class="no-pre">int main(void)</code>
+              <ul>
+                <li>
+                  The main function is what executes first when you run a C program
+                </li>
+                <li>
+                  "int" is a return type (integer) which allows the program to return error codes 
+                </li>
+                <li> 
+                  "main()" is the name of the function, with main being a special reserved function for the main execution block
+                </li>
+                <li>
+                  (void) are the arguments main takes in at execution, with void meaning nothing
+                </li>
+              </ul>
+            </li>
+            <li>
+              <code class="no-pre">{ ... }</code>
+              <ul>
+                <li>
+                  The braces under the main function bracket the code block belonging to the function
+                </li>
+                <li>
+                  White space (except where absolutely necessary) is ignored by C compilers, and the braces tell C what code belongs to which functions
+                </li>
+                <li>
+                  The above program could be written identically as follows:
+                  <code class="sub-list">
+#include&lt;stdio.h&gt;int main(void){printf("Hello, world!");return 0;}
+                  </code>
+                </li>
+                <li>
+                  Judicious use of white-space makes programs more human readable
+                </li>
+              </ul>
+            </li>
+            <li>
+              <code class="no-pre">printf("Hello, world!");</code>
+              <ul>
+                <li>
+                  The heart of our program. This line calls a function "printf()" and gives it a single argument, the literal string "Hello, world!" 
+                </li>
+                <li>
+                  Printf() is defined in the stdio library and its job is to print a "formatted string" to the console window
+                </li>
+                <li>
+                  The statement is terminated by use of a semicolon, which tells the C compiler that the statement is complete
+                </li>
+              </ul>
+            </li>
+            <li>
+              <code class="no-pre">return 0;</code>
+              <ul>
+                <li>
+                  The main function's "return value"
+                </li>
+                <li>
+                  Because main() is the main body of the program, it isn't strictly necessary to return any value 
+                </li>
+                <li>
+                  Typically, a return value allows you to call a function and get something back
+                </li>
+                <li>
+                  The return value for the main function only goes to whatever process started the program in the first place. This becomes useful when you want your program to return an error code when something goes wrong
+                </li>
+                <li>
+                  By convention, returning a code of "0" means everything executed correctly.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </section>
+      <section id="variables" class="main-section">
+        <header>Variables</header>
+        <p>
+          Variables are storage containers for values in C and are declared as follows:
+          <code>
+type name = value;
+          </code>
+        </p>
+        <p>
+          For example:
+          <code>
+int x = 10;
+          </code>
+        </p>
+        <p>
+          <strong>Type</strong> indicates what kind of data the variable will store and can be one of the following basic types:
+        </p>
+        <ul>
+          <li>int - Stores an integer</li>
+          <li>char - Stores a single ASCII character</li>
+          <li>float - Stores a "floating point" number (a number with a decimal point)</li>
+          <li>double - Similar to a float, but uses more memory and thus allows for double precision</li>
+          <li>void - A type to indicate nothing</li>
+        </ul>
+        <p>
+          <strong>Name</strong> is how the variable is referenced later in the program, and is subject to the following rules:
+        </p>
+        <ul>
+          <li>Contains only letters, digits, and underscores</li>
+          <li>Begins with a letter or an underscore</li>
+          <li>Case-sensitive</li>
+          <li>Cannot contain white-space or special characters other than underscore</li>
+          <li>Reserved keywords (ex. "int") cannot be used</li>
+        </ul>
+        <p>
+          In addition, it is good practice to make variable names descriptive of their purpose, use all lower case letters (except for the special case of a constant), and to use "snake case" for multiple words ("words seperated by underscores"). For example: <code class="no-pre">my_variable</code>
+        </p>
+      </section>
+      <section id="conditionals" class="main-section">
+        <header>Conditionals</header>
+        <p>
+          Conditionals allow a program to execute on exclusive branching paths based on a defined condition using the "if else" blocks.
+          <code>
+if (condition 1)
+{
+    path 1;
+}
+else if (condition 2)
+{
+    path 2;
+}
+else
+{
+    path 3;
+}
+          </code>
+        </p>
+        <p>
+          The "else" block executes when no other conditions are met.
+        </p>
+        <p>
+          Conditions take the form of boolean expressions that evaluate to "true" or "false" and use the following operators:
+        </p>
+        <ul>
+          <li>== - Equal to</li>
+          <li>!= - Not equal to</li>
+          <li>&lt; - Less than</li>
+          <li>&gt; - Greater than</li>
+          <li>&lt;= - Less than or equal to</li>
+          <li>&gt;= - Greater than or equal to</li>
+        </ul>
+        <p>
+          Additional logical operators allow the combination or negation of conditional expressions:
+        </p>
+        <ul>
+          <li>&& - Logical and</li>
+          <li>|| - Logical or</li>
+          <li>! - Negation</li>
+        </ul>
+      </section>
+      <section id="reference" class="main-section">
+        <header>Reference</header>
+        <p>
+          This page's content was created based on the author's knowledge suplemented and verified by referencing <a href="https://www.geeksforgeeks.org/c-programming-language/">geeksforgeeks.org</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
